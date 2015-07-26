@@ -14,7 +14,9 @@ This is my work:
 2. ` @IBOutlet weak var display: UILabel!`:'!' is meant " an optional but always automatically unwrapped".
 3. Auto layout
 4. function of calculating:
-5. ```swift   @IBAction func operate(sender: UIButton) {
+5. 
+```swift  
+@IBAction func operate(sender: UIButton) {
         let operation = sender.currentTitle!
         if userIsInTheMiddleOfTypingANumber {
             enter()
