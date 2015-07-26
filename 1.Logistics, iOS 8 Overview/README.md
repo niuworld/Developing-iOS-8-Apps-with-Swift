@@ -14,7 +14,6 @@ This is my work:
 2. ` @IBOutlet weak var display: UILabel!`:'!' is meant " an optional but always automatically unwrapped".
 3. Auto layout
 4. function of calculating:
-5. 
 ```swift  
 @IBAction func operate(sender: UIButton) {
         let operation = sender.currentTitle!
@@ -64,5 +63,4 @@ This is my work:
         }
     }
 ```
-
 ![](http://m2.img.srcdd.com/farm4/d/2015/0726/12/BC698AC5D04F0019DB471C02B9D1231E_ORIG_657_665.gif)
