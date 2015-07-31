@@ -40,6 +40,9 @@ class ViewController: UIViewController {
     
     @IBAction func operateDigit(sender: UIButton) {
         let operate = sender.currentTitle!
+        if userInTheMiddleOfTypingNumber{
+            enter()
+        }
         switch operate{
             case "×": performOperation{ $0 * $1 }
             case "−": performOperation{ $1 - $0 }
