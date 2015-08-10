@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
  
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var history: UILabel!
     
     var userIsInTheMiddleOfTypingANumber: Bool = false
     
@@ -24,8 +25,15 @@ class ViewController: UIViewController {
             display.text = digit
             userIsInTheMiddleOfTypingANumber = true
         }
+        updateHistory()
     }
     
+    @IBAction func BackDelete() {
+        if userIsInTheMiddleOfTypingANumber{
+            resetDisplay()
+        }
+        updateHistory()
+    }
     @IBAction func operate(sender: UIButton) {
         if userIsInTheMiddleOfTypingANumber {
             enter()
@@ -37,36 +45,76 @@ class ViewController: UIViewController {
                 displayValue = 0
             }
         }
+        updateHistory()
     }
     
-//    var operandStack: Array<Double> = Array<Double>()
+
+    @IBAction func SetM() {
+        brain.variableValues["M"] = displayValue
+        if let result = brain.evaluate(){
+            displayValue = result
+        }else{
+            displayValue = nil
+        }
+        updateHistory()
+    }
+    
+    @IBAction func PushM() {
+        if userIsInTheMiddleOfTypingANumber{
+            enter()
+        }
+        if let result = brain.pushOperand("M"){
+            displayValue = result
+        }else {
+            displayValue = nil
+        }
+        updateHistory()
+        
+    }
+    
+    //    var operandStack: Array<Double> = Array<Double>()
+    func resetDisplay(){
+        display.text = "0"
+        userIsInTheMiddleOfTypingANumber = false
+    }
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
 
-        if let result = brain.pushOperand(displayValue){
+        if let result = brain.pushOperand(displayValue!){
             displayValue = result
         } else{
-            displayValue = 0
+            resetDisplay()
         }
+        updateHistory()
     }
     
-    var displayValue: Double {
+    @IBAction func clearAll() {
+        brain.clearDisplay()
+        resetDisplay()
+        updateHistory()
+        
+    }
+    var displayValue: Double?  {
         get{
-            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+            if let displayText = display.text{
+            return  NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+            }
+            return nil
         }
         set{
-            display.text = "\(newValue)"
-            userIsInTheMiddleOfTypingANumber = false
+            if let newNumber = newValue{
+              display.text = "\(newNumber)"
+
+            } else{
+               display.text = nil
+            }
+        userIsInTheMiddleOfTypingANumber = false
         }
     }
-        override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    func updateHistory(){
+        history.text = brain.description + (!userIsInTheMiddleOfTypingANumber&&brain.lastOpIsAnOperation ? "=":"")
     }
 }
 

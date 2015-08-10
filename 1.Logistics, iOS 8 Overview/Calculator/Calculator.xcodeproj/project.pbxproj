@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1B4EB31B7798CF0040C1CC /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACCCB21B64C79000F56E3D /* CalculatorBrain.swift */; };
 		4FACCCB31B64C79000F56E3D /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACCCB21B64C79000F56E3D /* CalculatorBrain.swift */; };
 		4FC1926F1B628DC2008C4A59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1926E1B628DC2008C4A59 /* AppDelegate.swift */; };
 		4FC192711B628DC2008C4A59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC192701B628DC2008C4A59 /* ViewController.swift */; };
@@ -27,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4FACCCB21B64C79000F56E3D /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorBrain.swift; path = Calculator/CalculatorBrain.swift; sourceTree = "<group>"; };
+		4FACCCB21B64C79000F56E3D /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		4FC192691B628DC2008C4A59 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC1926D1B628DC2008C4A59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FC1926E1B628DC2008C4A59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		4FC192601B628DC2008C4A59 = {
 			isa = PBXGroup;
 			children = (
-				4FACCCB21B64C79000F56E3D /* CalculatorBrain.swift */,
 				4FC1926B1B628DC2008C4A59 /* Calculator */,
 				4FC192811B628DC2008C4A59 /* CalculatorTests */,
 				4FC1926A1B628DC2008C4A59 /* Products */,
@@ -80,6 +80,7 @@
 		4FC1926B1B628DC2008C4A59 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				4FACCCB21B64C79000F56E3D /* CalculatorBrain.swift */,
 				4FC192701B628DC2008C4A59 /* ViewController.swift */,
 				4FC192721B628DC2008C4A59 /* Main.storyboard */,
 				4FC1926C1B628DC2008C4A59 /* Supporting Files */,
@@ -159,6 +160,7 @@
 		4FC192611B628DC2008C4A59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Noah;
 				TargetAttributes = {
@@ -225,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1B4EB31B7798CF0040C1CC /* CalculatorBrain.swift in Sources */,
 				4FC192851B628DC2008C4A59 /* CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
