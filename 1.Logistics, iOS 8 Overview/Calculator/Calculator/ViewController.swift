@@ -30,7 +30,14 @@ class ViewController: UIViewController {
     
     @IBAction func BackDelete() {
         if userIsInTheMiddleOfTypingANumber{
-            resetDisplay()
+            if count(display.text!) > 1 {
+                display.text = dropLast(display.text!)
+            }
+            else { resetDisplay()
+            }
+        }  else{
+            brain.backspace()
+            displayValue = brain.evaluate()
         }
         updateHistory()
     }

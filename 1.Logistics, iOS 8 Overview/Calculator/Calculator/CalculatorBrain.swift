@@ -176,6 +176,15 @@ class CalculateBrain {
         return evaluate()
     }
     
+    
+    
+    func backspace () -> Double? {
+        if !opStack.isEmpty{
+        opStack.removeLast()
+        }
+    return evaluate()
+    }
+    
     var variableValues = [String:Double]()
   
     func clearDisplay() -> Double? {
